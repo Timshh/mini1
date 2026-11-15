@@ -1,0 +1,19 @@
+﻿#pragma once
+#include <cmath>
+#include <ostream>
+
+struct Vec3 {
+ public:
+  Vec3(float x, float y, float z);
+  Vec3 operator+(const Vec3& add) const;
+  Vec3 operator-(const Vec3& rem) const;
+  Vec3 operator*(float mult) const;
+  Vec3 scalMult(const Vec3& mult) const;
+  Vec3 vecMult(const Vec3& mult) const;
+  float length() const;
+  Vec3 normalize() const;
+  friend std::ostream& operator<<(std::ostream& os, const Vec3& v);
+
+ private:
+  float x, y, z;
+};
