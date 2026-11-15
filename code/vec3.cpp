@@ -14,8 +14,8 @@ Vec3 Vec3::operator*(float mult) const {
   return Vec3(x * mult, y * mult, z * mult);
 }
 
-Vec3 Vec3::scalMult(const Vec3& mult) const {
-  return Vec3(x * mult.x, y * mult.y, z * mult.z);
+float Vec3::scalMult(const Vec3& mult) const {
+  return x * mult.x + y * mult.y + z * mult.z;
 }
 
 Vec3 Vec3::vecMult(const Vec3& mult) const {
@@ -23,7 +23,7 @@ Vec3 Vec3::vecMult(const Vec3& mult) const {
               x * mult.y - y * mult.z);
 }
 
-float Vec3::length() const { return sqrt(x * x + y * y + z * z); }
+float Vec3::length() const { return std::sqrt(x * x + y * y + z * z); }
 
 Vec3 Vec3::normalize() const {
   float len = length();
